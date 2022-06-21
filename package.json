@@ -6,14 +6,14 @@
   "scripts": {
     "install-server": "npm install --prefix Server",
     "install-client": "npm install --prefix Client",
-    "install": "npm run install-Server && npm run install-Client",
-    "server": "npm run watch --prefix Server",
+    "install": "npm run install-server && npm run install-client",
+    "server": "npm run watch --prefix server",
     "server-cluster": "npm run cluster --prefix server",
-    "client": "npm start --prefix Client",
-    "watch": "concurrently 'npm:server' 'npm:Client' ",
-    "watch-cluster": "concurrently 'npm:server-cluster' 'npm:Client' ",
+    "client": "npm start --prefix client",
+    "watch": "concurrently 'npm:server' 'npm:client' ",
+    "watch-cluster": "concurrently 'npm:server-cluster' 'npm:client' ",
     "deploy": "npm run build --prefix Client",
-    "test": "npm test --prefix Server && npm test --prefix Client"
+    "test": "npm test --prefix server && npm test --prefix client"
   },
   "author": "",
   "license": "ISC",
